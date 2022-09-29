@@ -1,4 +1,3 @@
-# 1st_Python_App
 # Learning Python  
 
 ### Prepare pyenv  
