@@ -74,3 +74,4 @@ Run your script with
 ```sh
 python hello.py
 ```
+![Screenshot]
