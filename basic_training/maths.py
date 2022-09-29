@@ -1,27 +1,29 @@
 # examples of basic maths operation
 # + , - , * , /
 # // , ** , 
-print (10/3)
+# print (10/3)
 
 # with values
-x = 10
-y = 5
-z = 2
+# x = 10
+# y = 5
+# z = 2
 
-x += 7 
+    # x += 7 
 
-x = 10 + 3 * 2
+    # y = 10 + 3 * 2
 
-x =
+    # z = 27 * 3 / 2
 
-print (x)
+    # print (x)
 
-print (y)
+    # print (y)
 
-print (z)
+    # print (z)
 
 # comparaison operator
-
-x = 5 > 8  # boolean
+# x = 5 > 8  # boolean
 # < , > , <= , >= , or == , !=
 
+x = 5 > 8
+print(x)
+# respond false or true

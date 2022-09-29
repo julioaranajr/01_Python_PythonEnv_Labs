@@ -1,3 +1,8 @@
-apples = input ("How many apples do you have?")
+# inputs for apples variable
 
-print ( {f "You have {apples} apples" } )
+apples = input("How many apples do you have ?")
+price = 1.50
+print("You have " + apples + " apples!")
+
+total = float(apples) * price
+print("Total price in Euros is = " + str(total))

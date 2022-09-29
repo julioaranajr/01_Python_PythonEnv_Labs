@@ -1,21 +1,20 @@
-distance_from_sun = {
-
-# Key = value
-"Mercury": 0.4,
-"Venus": 0.7,
-"Earth": 1,
+from turtle import distance
 
 distance_from_sun = {
+    # KEY = VALUE
     "Mercury": {
         "moons": 0,
         "atmosphere": False
     },
-    "Venus":{
+    "Venus": {
         "moons": 0,
-        "atmosphere": False
-    }
-
-
-
-
+        "atmosphere": True
+    },
+    "Earth": {
+        "moons": 1,
+        "atmosphere": True
+    },
+    "Mars": 1.5
 }
+
+print(distance_from_sun["Earth"]["atmosphere"])
