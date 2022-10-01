@@ -1,12 +1,11 @@
 import boto3
 from datetime import datetime
 
-client = boto3.client("s3")
+# Retrieve the list of existing buckets
+s3 = boto3.client('s3')
+response = s3.list_buckets()python 
 
-response = client.list_buckets()
-
-# print(response["Buckets"])
-
-for bucket in response["Buckets"]:
-    print(datetime.strftime(bucket["CreationDate"], "%Y-%m-%d %H:%M:%S"),
-        bucket["Name"])
+# Output the bucket names
+print('Existing buckets:')
+for bucket in response['Buckets']:
+    print(f'  {bucket["Name"]}')
