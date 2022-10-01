@@ -1,6 +1,6 @@
 # Learning Python
 
-### Prepare pyenv
+## Prepare pyenv
 
 ```sh
 PYTHON_VERSION="3.10.5"
@@ -55,7 +55,7 @@ Set a new version of python on your mac:
 pyenv global $PYTHON_VERSION
 ```
 
-### Your First Python Program
+## Your First Python Program
 
 Create a new file
 
@@ -74,5 +74,5 @@ Run your script with
 ```sh
 python hello.py
 ```
-### Running 
+## Running 
 ![Screenshot](https://github.com/julioaranajr/01_Python_PyEnv_App/blob/main/hello-world-py.png)
