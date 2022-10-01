@@ -25,7 +25,7 @@ output = {
 }
 
 print(json.dumps(output, indent=4))
-...
+
 
 #Testing AWS credentials via AWS CLI
 My favorite way of testing AWS credentials is by running the following command:
