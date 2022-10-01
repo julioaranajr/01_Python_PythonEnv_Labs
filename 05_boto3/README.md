@@ -27,27 +27,26 @@ To configure the AWS environment, type the following command in your terminal:
  This command will walk you through an environment configuration process and 
  ask you for 4 things:
 ```
-```
+
 AWS Access Key: just press enter 
 AWS Secret Access Key: just press and press enter 
 Default region name: type -> your [aws-region-1] and enter
 Default output format: type -> json and press enter
-``` 
+
 **The aws configure tool allows you not to store your AWS credentials** 
 **(the AWS Access and Secret Keys) in your Python scripts.**
 
-```
+
 Note: even storing AWS Access and Secret Keys in a plain text file 
 (~/.aws/credentials) is not very secure. The better and more secure 
 way is to store AWS Access and Secret Keys in the encrypted store, 
 for example, aws-vault.
-```
+
 ## Testing AWS credentials
-```
 As soon as you’ve configured your AWS credentials, you can test that everything’s 
 ready to move forward. 
-```
-![HOW TEST AWS](https://github.com/julioaranajr/01_Python_PythonEnv_Labs/blob/main/05_boto3/Test_AWS_Credentials.md)
+
+![link](https://github.com/julioaranajr/01_Python_PythonEnv_Labs/blob/main/05_boto3/Test_AWS_Credentials.md)
 
 ### List Buckets example
 
