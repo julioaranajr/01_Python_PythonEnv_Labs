@@ -33,7 +33,7 @@ print(json.dumps(output, indent=4))
     This command will produce information about your AWS Account and User IDs:
 ```
 
-'''sh
+
 ## Getting AWS Account and User IDs - Example output
 ```sh
     {
