@@ -46,7 +46,7 @@ for example, aws-vault.
 As soon as you’ve configured your AWS credentials, you can test that everything’s 
 ready to move forward. 
 
-![link](https://github.com/julioaranajr/01_Python_PythonEnv_Labs/blob/main/05_boto3/Test_AWS_Credentials.md)
+Test your Credentials here: [link](https://github.com/julioaranajr/01_Python_PythonEnv_Labs/blob/main/05_boto3/Test_AWS_Credentials.md)
 
 ### List Buckets example
 
