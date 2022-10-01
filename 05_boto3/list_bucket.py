@@ -3,7 +3,7 @@ from datetime import datetime
 
 # Retrieve the list of existing buckets
 s3 = boto3.client('s3')
-response = s3.list_buckets()python 
+response = s3.list_buckets()
 
 # Output the bucket names
 print('Existing buckets:')
