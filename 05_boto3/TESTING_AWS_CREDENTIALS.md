@@ -1,11 +1,10 @@
-## Testing AWS credentials via Boto3
-'''sh
+# Testing AWS credentials via Boto3
+```sh
 We can request the same information by using the Boto3 library. 
 Here’s an example of a Python script (get_caller_identity.py) 
 to do that:
-'''
-
-'''sh
+```
+```py
 #!/usr/bin/env python3
 
 import json
@@ -24,22 +23,22 @@ output = {
     'Account': account,
     'Arn': arn
 }
-
 print(json.dumps(output, indent=4))
-'''
+```
 
-'''sh
-## Testing AWS credentials via AWS CLI
-My favorite way of testing AWS credentials is by running the following command:
-    aws sts get-caller-identity | tee
-    This command will produce information about your AWS Account and User IDs:
-'''
+# Testing AWS credentials via AWS CLI
+```sh
+    > My favorite way of testing AWS credentials is by running the following command:
+    > aws sts get-caller-identity | tee
+    > This command will produce information about your AWS Account and User IDs:
+```
 
 '''sh
 ## Getting AWS Account and User IDs - Example output
-{
+```sh
+    {
     "UserId": "AKIAYQV4J5VM5FWGJMGB",
     "Account": "0123456789",
     "Arn": "arn:aws:iam::0123456789:user/admin"
 }
-'''
+```
