@@ -13,11 +13,11 @@ To install theAWS CLI tools, you have to run another command in your terminal:
 pip install awscli
 ```
 ## Configuring AWS environment
-
+```
 AWS CLI is a set of command-line tools for accessing AWS from the terminal shell. 
 Those tools are available for you through the aws command. In this section, we’ll use a 
 subcommand named configure to set up an AWS environment on your laptop, workstation, or server.
-
+```
 To configure the AWS environment, type the following command in your terminal:
 
 ```sh
@@ -27,12 +27,12 @@ To configure the AWS environment, type the following command in your terminal:
  This command will walk you through an environment configuration process and 
  ask you for 4 things:
 ```
-
-AWS Access Key: just press enter 
-AWS Secret Access Key: just press and press enter 
-Default region name: type -> your [aws-region-1] and enter
-Default output format: type -> json and press enter
-
+```sh
+>AWS Access Key: just press enter 
+>AWS Secret Access Key: just press and press enter 
+>Default region name: type -> your [aws-region-1] and enter
+>Default output format: type -> json and press enter
+```
 **The aws configure tool allows you not to store your AWS credentials** 
 **(the AWS Access and Secret Keys) in your Python scripts.**
 
@@ -80,5 +80,7 @@ for bucket in response["Buckets"]:
 ```
 - Write a boto3 script that prints out all VPCs and Subnets
 in your lab account.
-- Then for each resource found (VPC and subnets), attach a new AWS tag "Project: Talent-Academy" where tag key is "Project" and tag value is "Talent-Academy"
+- Then for each resource found (VPC and subnets), attach a new 
+AWS tag "Project: Talent-Academy" where tag key is "Project" and 
+tag value is "Talent-Academy"
 ```
