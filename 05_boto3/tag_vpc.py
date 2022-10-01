@@ -1,58 +1,53 @@
-import json
+# Program to Loop through each existing subnets to scan for instances and add a new tag to each server
+import logging
 import boto3
+from botocore.exceptions import ClientError
+import json
 
-client = boto3.client('ec2')
+session = boto3.Session(profile_name='talen-academy')
+dev_s3_client = session.client('s3')
 
-##filters = [{'Name':'tag:Name', 'Values':['*vpc*']}]
 
-#response = client.describe_vpcs(Filters = filters)
-vpc = client.describe_vpcs()
-subnets = client.describe_subnets()
-print(subnets)
+AWS_REGION = 'eu-central-1'
 
-# print(vpcs = client.describe_vpcs(Filters = [{
-#     'Name':'tag:VcpId', 'Values':['*']
-# }]))
-#vpcs = list(client.vpcs.filter(Filters=filters))
+# logger config
+logger = logging.getLogger()
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s: %(levelname)s: %(message)s')
 
-#vpc = vpcs["Vpcs"][0]["VpcId"]
-#print(json.dumps(response, indent=4))
+vpc_client = boto3.client("ec2", region_name=AWS_REGION)
 
-mytags = [{
-    "Key" : "Project",
-    "Value" : "Talent-Academy"
-}]
 
-# tag = client.create_tags(
-#     Resources = [vpc],
-#     Tags=[
-#         {
-#             'Key': 'string',
-#             'Value': 'string'
-#         },
-#     ]
-# )
+def get_instances_in_subnet(subnet_id):
+    response = ec2_client.describe_instances(Filters=[
+          {
+              "Name": "subnet-id",
+              "Values": [
+                  subnet_id,
+              ]
+          },
+      ])
+    instance_ids = []
+    for reservation in response["Reservations"]:
+        instance_ids.extend([instance["InstanceId"] for instance in reservation["Instances"]])
+    return instance_ids
 
-for vpc_response in vpc['Vpcs']:
-    vpcid = vpc_response.get('VpcId', [])
-    client.create_tags(
-    Resources = [vpcid],
-    Tags=[
-        {
-            'Key': 'Project',
-            'Value': 'Talent-Academy'
-        },
-    ]
-)
 
-for subnet_response in subnets['Subnets']:
-    subnetid = subnet_response.get('SubnetId', [])
-    client.create_tags(
-    Resources = [subnetid],
-    Tags=[
-        {
-            'Key': 'Project',
-            'Value': 'Talent-Academy'
-        },
-    ]
-)
+def tag_instances(instance_ids, tag_key="MyTag", tag_value="MyTagValue"):
+    ec2_client.create_tags(
+        Resources=instance_ids,
+        Tags=[
+            {
+                "Key": tag_key,
+                "Value": tag_value
+            },
+        ])
+    logger.info(f"{len(instance_ids)} instances tagged with {tag_key}:{tag_value}")
+
+
+if __name__ == "__main__":
+    response = ec2_client.describe_subnets()
+    for subnet in response["Subnets"]:
+        instance_ids = get_instances_in_subnet(subnet["SubnetId"])
+        if instance_ids:
+            tag_instances(instance_ids, "ScheduledLifecycle", "Yes")
