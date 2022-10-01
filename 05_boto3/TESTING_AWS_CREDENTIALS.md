@@ -2,7 +2,7 @@
 ```py
 We can request the same information by using the Boto3 library. 
 Here’s an example of a Python script (get_caller_identity.py) 
-to do that:
+to do this:
 ```
 ```py
 #!/usr/bin/env python3
