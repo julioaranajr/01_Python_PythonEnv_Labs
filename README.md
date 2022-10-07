@@ -60,16 +60,16 @@ pyenv global $PYTHON_VERSION
 Create a new file
 
 ```sh
-vi hello.py
+code hello.py
 ```
 
-Edit your file with
+Edit your file with visual studio and write this line:
 
 ```py
 print("Hello World")
 ```
 
-Run your script with
+Run the script **hello.py** in your terminal
 
 ```sh
 python hello.py
